@@ -4,14 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Demo.DataAcssesLayer.Entites
+namespace Demo.BusnessLayerLogic.DataTransferObject
 {
-    public class Department : BaseEntity
+    public class DepartmentResponse
     {
+        public int Id { set; get; }
         public string Name { get; set; } = null!;
+        public string? Descreption {  get; set; }
         public string Code { get; set; } = null!;
-        public string? Description { get; set; }
 
-        public DateTime CreatedAt { get; set; }
+        public DateTime CreatedAt { get; set; }  
+
+
+
+
     }
 }

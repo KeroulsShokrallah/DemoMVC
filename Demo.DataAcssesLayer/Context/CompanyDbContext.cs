@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Demo.DataAcssesLayer.Context
 {
-    internal class CompanyDbContext : DbContext
+    public class CompanyDbContext(DbContextOptions<CompanyDbContext> options) : DbContext(options)
     {
         public DbSet<Department> Departmens { get; set; }
 

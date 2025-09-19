@@ -1,3 +1,8 @@
+using Demo.BusnessLayerLogic.Services;
+using Demo.DataAcssesLayer.Context;
+using Demo.DataAcssesLayer.Repositorys;
+using Microsoft.EntityFrameworkCore;
+
 namespace Demo.PL
 {
     public class Program
@@ -8,6 +13,23 @@ namespace Demo.PL
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddScoped<IDepartmentService,DepartmentService>();
+            builder.Services.AddScoped<IDepartmentRepository,DepartmentRepository>();
+            //builder.Services.AddScoped<CompanyDbContext>();
+            //builder.Services.AddScoped<CompanyDbContext>(provider=>
+            //{
+            //    var builder = new DbContextOptionsBuilder<CompanyDbContext>();
+            //    builder.UseSqlServer("");
+            //    return new CompanyDbContext(builder.Options);
+            //});
+
+            builder.Services.AddDbContext<CompanyDbContext>(options =>
+            {
+                var connectinString = builder.Configuration.GetConnectionString("DefalutConnection");
+                //var connectinString2 = builder.Configuration["ConnectionStrings: DefalutConnection"];
+                //var connectinString3 = builder.Configuration.GetSection("ConnectionStrings")["DefalutConnection"];
+                options.UseSqlServer(connectinString);
+            });
 
             var app = builder.Build();
 
