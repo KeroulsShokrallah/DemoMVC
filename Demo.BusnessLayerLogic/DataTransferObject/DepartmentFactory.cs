@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Demo.BusnessLayerLogic.DataTransferObject
 {
-    internal static class DepartmentFactory
+    public static class DepartmentFactory
     {
         public static DepartmentResponse ToResponse(this Department department)
         {
