@@ -1,4 +1,4 @@
-﻿using Demo.BusnessLayerLogic.DataTransferObject;
+﻿using Demo.BusnessLayerLogic.DataTransferObject.Departments;
 using Demo.DataAcssesLayer.Entites;
 using System;
 using System.Collections.Generic;

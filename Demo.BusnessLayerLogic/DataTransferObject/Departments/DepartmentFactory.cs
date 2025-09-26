@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Demo.BusnessLayerLogic.DataTransferObject
+namespace Demo.BusnessLayerLogic.DataTransferObject.Departments
 {
     public static class DepartmentFactory
     {

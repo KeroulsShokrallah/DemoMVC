@@ -1,4 +1,4 @@
-﻿using Demo.BusnessLayerLogic.DataTransferObject;
+﻿using Demo.BusnessLayerLogic.DataTransferObject.Departments;
 using Demo.BusnessLayerLogic.Services;
 using Demo.DataAcssesLayer.Entites;
 using Microsoft.AspNetCore.Mvc;

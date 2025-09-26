@@ -1,7 +1,9 @@
 using Demo.BusnessLayerLogic.Services;
 using Demo.DataAcssesLayer.Context;
+using Demo.DataAcssesLayer.Entites;
 using Demo.DataAcssesLayer.Repositorys;
 using Microsoft.EntityFrameworkCore;
+using NuGet.Packaging.Core;
 
 namespace Demo.PL
 {
@@ -13,8 +15,19 @@ namespace Demo.PL
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            builder.Services.AddScoped<IDepartmentService,DepartmentService>();
-            builder.Services.AddScoped<IDepartmentRepository,DepartmentRepository>();
+           builder.Services.AddScoped<IDepartmentService, DepartmentService>();
+            //builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+            //builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+
+            //builder.Services.AddScoped<IRepository<Department>, BaseRepository<Department>>();
+            builder.Services.AddScoped(typeof(IRepository<>) ,typeof(BaseRepository<>));
+
+
+            //register auto mapper and add assembly from bussiness logic layer 
+            builder.Services.AddAutoMapper(typeof(BusnessLayerLogic.AssemblyRefrences).Assembly);
+
+
+
             //builder.Services.AddScoped<CompanyDbContext>();
             //builder.Services.AddScoped<CompanyDbContext>(provider=>
             //{

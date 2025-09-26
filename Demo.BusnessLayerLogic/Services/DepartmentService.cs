@@ -1,4 +1,4 @@
-﻿using Demo.BusnessLayerLogic.DataTransferObject;
+﻿using Demo.BusnessLayerLogic.DataTransferObject.Departments;
 using Demo.DataAcssesLayer.Entites;
 using Demo.DataAcssesLayer.Repositorys;
 using System;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Demo.BusnessLayerLogic.Services
 {
-    public class DepartmentService(IDepartmentRepository departmentRepositry) : IDepartmentService
+    public class DepartmentService(IRepository<Department> departmentRepositry) : IDepartmentService
     {
         public int Add(DepartmentRequest request)
         {

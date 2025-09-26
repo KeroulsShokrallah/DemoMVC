@@ -11,6 +11,7 @@ namespace Demo.DataAcssesLayer.Context
     public class CompanyDbContext(DbContextOptions<CompanyDbContext> options) : DbContext(options)
     {
         public DbSet<Department> Departmens { get; set; }
+        public DbSet<Employee> Employees { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
