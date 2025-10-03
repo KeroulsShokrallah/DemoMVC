@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Demo.BusnessLayerLogic.Services
 {
-    public class DepartmentService(IRepository<Department> departmentRepositry) : IDepartmentService
+    public class DepartmentService(IDepartmentRepository departmentRepositry) : IDepartmentService
     {
         public int Add(DepartmentRequest request)
         {

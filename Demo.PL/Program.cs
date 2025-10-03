@@ -16,11 +16,12 @@ namespace Demo.PL
             // Add services to the container.
             builder.Services.AddControllersWithViews();
            builder.Services.AddScoped<IDepartmentService, DepartmentService>();
-            //builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
-            //builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+            builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 
             //builder.Services.AddScoped<IRepository<Department>, BaseRepository<Department>>();
-            builder.Services.AddScoped(typeof(IRepository<>) ,typeof(BaseRepository<>));
+            //builder.Services.AddScoped(typeof(IRepository<>) ,typeof(BaseRepository<>));
 
 
             //register auto mapper and add assembly from bussiness logic layer 
